@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Typing Speed Test</h1>
+      <div class="stats">
+        <div class="stat-box">
+          <span id="wpm">0</span>
+          <span class="stat-label">WPM</span>
+        </div>
+        <div class="stat-box">
+          <span id="accuracy">0%</span>
+          <span class="stat-label">Accuracy</span>
+        </div>
+        <div class="stat-box">
+          <span id="time">25</span>
+          <span class="stat-label">Seconds</span>
+        </div>
+      </div>
+      <div id="text-display" class="text-display">
+        Click "Start Test" to begin...
+      </div>
+      <textarea
+        id="text-input"
+        placeholder="Start typing here..."
+        disabled
+      ></textarea>
+      <div class="controls">
+        <button id="start-btn">Start Test</button>
+        <button id="reset-btn" disabled>Reset</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
