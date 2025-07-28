@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let timer;
-  let timeLeft = 25;
+  let timeLeft = "30";
   let isTestRunning = false;
   let currentText = '';
   let totalTyped = 0;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const elapsedTime = (25 - timeLeft) / 25;
+    const elapsedTime = (30 - timeLeft) / 30;
     const wordsTyped = correctTyped / 5;
     const wpm = Math.round(wordsTyped / elapsedTime) || 0;
     const accuracy = totalTyped ? Math.round((correctTyped / totalTyped) * 100) : 0;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textInput.value = '';
 
     currentText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
-    timeLeft = 25;
+    timeLeft = 30;
     timeDisplay.textContent = timeLeft;
     totalTyped = 0;
     correctTyped = 0;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetBtn.disabled = true;
     wpmDisplay.textContent = '0';
     accuracyDisplay.textContent = '0%';
-    timeDisplay.textContent = '25';
+    timeDisplay.textContent = '30';
   }
 
   textInput.addEventListener('input', () => {
