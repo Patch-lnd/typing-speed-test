@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const timeDisplay = document.getElementById('time');
 
   const sampleTexts = [
-    "The quick brown fox jumps over the lazy dog.",
-    "Programming is fun when you understand the logic.",
-    "Typing fast requires both accuracy and practice.",
-    "A journey of a thousand miles begins with a step.",
-    "JavaScript is tricky but powerful when mastered.",
-    "Errors are normal; they help us grow and learn.",
-    "Djeumeni sanda vianey is the, creator and he merrits an XPPen Deco Pro MW.",
+    "the wind carried the scent of pine as the sun dipped below the distant hills, casting long shadows across the quiet valley where a single deer moved silently through the tall grass, pausing only to listen for the soft rustle of leaves in the trees above",
+    "time passes slowly when you're waiting for something to change, yet so quickly when you look back and realize how much has already happened without you even noticing the moments slipping quietly through your hands like grains of sand",
+    "a cold breeze swept through the empty streets as rain began to fall gently, tapping against windows and rooftops, blurring the lights of the city into glowing streaks of orange and white, like a painting smudged by careless hands",
+    "sometimes the hardest thing isn't knowing what to do next, but having the patience to keep moving forward even when everything feels uncertain and the path ahead is hidden by fog and fear and doubt that seem too heavy to carry",
+    "light filters through the trees, casting patterns on the forest floor where insects buzz and birds call to one another in bursts of song, as if the world is singing a secret language you were never taught but somehow still understand",
+    "the stars blinked above the quiet desert where the sand kept secrets from ancient times, and the air was so still you could almost hear the sky breathing as night unfolded like a slow and endless dream across the earth",
+    "in the silence between moments we find meaning, not in the noise or the rush, but in the pause, the breath, the glance that lingers a second longer than expected, the feeling that something invisible is always guiding us forward",
   ];
 
   let timer;
-  let timeLeft = 60;
+  let timeLeft = 25;
   let isTestRunning = false;
   let currentText = '';
   let totalTyped = 0;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const elapsedTime = (60 - timeLeft) / 60;
+    const elapsedTime = (25 - timeLeft) / 25;
     const wordsTyped = correctTyped / 5;
     const wpm = Math.round(wordsTyped / elapsedTime) || 0;
     const accuracy = totalTyped ? Math.round((correctTyped / totalTyped) * 100) : 0;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textInput.value = '';
 
     currentText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
-    timeLeft = 60;
+    timeLeft = 25;
     timeDisplay.textContent = timeLeft;
     totalTyped = 0;
     correctTyped = 0;
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetBtn.disabled = true;
     wpmDisplay.textContent = '0';
     accuracyDisplay.textContent = '0%';
-    timeDisplay.textContent = '60';
+    timeDisplay.textContent = '25';
   }
 
   textInput.addEventListener('input', () => {
