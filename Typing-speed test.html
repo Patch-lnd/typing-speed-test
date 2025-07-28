@@ -169,6 +169,99 @@
         const textInput = document.getElementById('text-input');
         const startBtn = document.getElementById('start-btn');
         const resetBtn = document.getElementById('reset-btn');
-        const wpmDisplay
+        const wpmDisplay = document.getElementById('wpm');
+        const accuracyDisplay = document.ElementById('accuracy');
+        const timeDisplay = document.getElementId('time');
 
+        let timer;
+        let timeLeft = 60;
+        let isTestRunning = false;
+        let startTime;
+        let totalTyped = 0;
+        let correctTyped = 0;
+        let currentText = '';
+
+        // sample text for typing test
+        const sampleTexts = [
+            "The  quick brown fox jumps oer the lazy dog. This sentence is demonstrative.",
+            "Djeumeni sabda is a novice but has good bases.",
+            "Programing is fun and rewarding when you understabd the logic.",
+            "typing fast requires both accuracy and consistent practice.",
+            "Practice makes perfect, so keep typing every day!.follow sanda",
+            "Every developer should master the basics before learning frameworks.",
+            "A journey of a thousand miles begins with a single step.",
+            "JavaScript can be tricky, but practice leads to progress.",
+            "Fast fingers and sharp focus are keys to typing success.",
+            "Errors are part of learning; don't be afraid to make mistakes."
+        ]; 
+
+        //initialize the app
+        function init() {
+            textInput.value ='';
+            textInput.disable = true;
+            resetBtn.disable = true;
+            timeDisp.textContent = timeLeft;
+        }
+
+        // Start the typing test
+        function startTest() {
+            if (isTestRunning) return;
+
+            isTestRunning = true;
+            startBtn.disable = true;
+            resetBtn.disable = false;
+            textInput.disable = false;
+            textInput.focus();
+
+            // Select random text
+            currentText = sampleTexts[Math.floor(Math.random) * sample]
+            renderText();
+
+            // Reset stats
+            totalTyped = 0;
+            correctTyped = 0;
+            timeLeft = 60;
+            timeDiesplay.textContent = timeLeft;
+            wpmDisplay.textContent = 0;
+            accuracyDisplay.textContent = 0;
+
+            // start timer
+            startTime = new Date().getTime();
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        //update the timer
+        function updateTimer() {
+                timeLeft--;
+                timeDisplay.textContent = timeLeft;
+
+                if (timeLeft<= 0) {
+                    endTest();
+                }
+            }
+
+            // End the typing test
+            function endTest() {
+                clearInterval(timer);
+                isTestRunning = false;
+                textInput.disable = true;
+                startBtn.disable = false;
+
+                // calculate final WPM and accuracy
+                calculateStats();
+            }
+
+            // Reset the typing test
+            function resetTest() {
+                clearInterval(timer);
+                isTestRunning = false;
+                init();
+                textDisplay.textContent = "Click \"Start Test\" to begin...";
+            }
+            //calculate WPM and accuracy
+            function calculateStats() {
+                const elapsedTime = (60 - timeLeft) / 60; // in minutes
+                const words = (correctTyped / 5); // assuming 5 characters
+                const wpm = Math.round(words)
+            }
     })
