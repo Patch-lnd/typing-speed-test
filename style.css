@@ -6,33 +6,34 @@
 }
 
 body {
-  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #2193b0);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffffd0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   padding: 30px;
   max-width: 800px;
   width: 100%;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
+h1 { text-align: center; margin-bottom: 20px; }
 
-.stats {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
+.stats { display: flex; justify-content: space-between; margin-bottom: 20px; }
 
 .stat-box {
   background-color: #f8f9fa;
@@ -49,10 +50,7 @@ h1 {
   color: #2c3e50;
 }
 
-.stat-label {
-  font-size: 14px;
-  color: #7f8c8d;
-}
+.stat-label { font-size: 14px; color: #7f8c8d; }
 
 .text-display {
   background-color: #f8f9fa;
@@ -77,9 +75,7 @@ h1 {
   outline: none;
 }
 
-#text-input:focus {
-  border-color: #3498db;
-}
+#text-input:focus { border-color: #3498db; }
 
 .controls {
   display: flex;
@@ -98,25 +94,9 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #2980b9;
-}
+button:hover { background-color: #2980b9; }
+button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
 
-button:disabled {
-  background-color: #bdc3c7;
-  cursor: not-allowed;
-}
-
-.correct {
-  color: #27ae60;
-}
-
-.incorrect {
-  color: #e74c3c;
-  text-decoration: underline;
-}
-
-.current {
-  background-color: #fffde7;
-  border-radius: 2px;
-}
+.correct { color: #27ae60; }
+.incorrect { color: #e74c3c; text-decoration: underline; }
+.current { background-color: #bdaf1c; border-radius: 2px; }
